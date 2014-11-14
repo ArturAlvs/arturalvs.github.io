@@ -56,35 +56,6 @@ a:hover{
 	color: white;
 }
 
-.social{
-	position: fixed;
-	z-index: 100;
-}
-
-.item1 {
-	color: teal;
-	font-size: 2em;
-	cursor: pointer;
-
-}
-.item2 {
-	color: green;
-	font-size: 2em;
-	cursor: pointer;
-}
-.item3 {
-	color: rgb(144, 238, 144);
-	font-size: 2em;
-	cursor: pointer;
-
-}
-.item4 {
-	color: lime;
-	font-size: 2em;
-	cursor: pointer;
-
-}
-
 .fb{
 	color: rgb(137,158,203);
 }

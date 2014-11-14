@@ -1,0 +1,105 @@
+
+.firstCont {
+	background-color: rgb(255, 255, 255);
+
+	font-family: 'Open Sans';
+
+	color: rgb(102, 102, 102);
+}
+
+.secondCont{
+	background-color: rgb(102, 102, 102);
+
+	font-family: 'Open Sans';
+	color: white;
+
+	position: relative;
+}
+
+.title{
+
+	color: rgb(102,102,102);
+	position: absolute;
+	font-size: 2.618em;
+	line-height: 1.618em;
+
+}
+
+.subtitle{
+
+	color: rgb(153, 153, 153);
+
+	font-size: 0.618em;
+
+	text-align: center;
+	/*margin-left: auto;
+	margin-right: auto;*/
+
+}
+
+.txt{
+	position: absolute;
+	position: absolute;
+	font-size: 1.618em;
+	line-height: 1.618em;
+
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+a:hover{
+	text-decoration: none;
+	color: white;
+}
+
+.social{
+	position: fixed;
+	z-index: 100;
+}
+
+.item1 {
+	color: teal;
+	font-size: 2em;
+	cursor: pointer;
+
+}
+.item2 {
+	color: green;
+	font-size: 2em;
+	cursor: pointer;
+}
+.item3 {
+	color: rgb(144, 238, 144);
+	font-size: 2em;
+	cursor: pointer;
+
+}
+.item4 {
+	color: lime;
+	font-size: 2em;
+	cursor: pointer;
+
+}
+
+.fb{
+	color: rgb(137,158,203);
+}
+.gh{
+	color: rgb(238,185,153);
+}
+.ig{
+	color: rgb(223,166,97);
+}
+.gp{
+	color: rgb(221,97,90);
+}
+.tw{
+	color: rgb(93,181,222);
+}
+.tb{
+	color: rgb(183,201,99);
+}

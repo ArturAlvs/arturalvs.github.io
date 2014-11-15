@@ -1,4 +1,6 @@
 
+$('#body').hide();
+
 
 var arrumarACasa = function(){
 	
@@ -57,6 +59,8 @@ var cursorAnim = function(){
 $(document).ready(function(){
 
 	setInterval('cursorAnim()', 616);
+
+	$('#body').show();
 });
 
 

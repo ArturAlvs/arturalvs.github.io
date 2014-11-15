@@ -1,5 +1,5 @@
 
-$('#body').hide();
+// $('#body').hide();
 
 
 var arrumarACasa = function(){

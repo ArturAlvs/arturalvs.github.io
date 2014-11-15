@@ -1,7 +1,4 @@
 
-// $('#body').hide();
-
-
 var arrumarACasa = function(){
 	
 	var winW = $(window).width();
@@ -60,7 +57,6 @@ $(document).ready(function(){
 
 	setInterval('cursorAnim()', 616);
 
-	$('#body').show();
 });
 
 

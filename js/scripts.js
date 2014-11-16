@@ -1,4 +1,4 @@
-
+console.log("as");
 var arrumarACasa = function(){
 	
 	var winW = $(window).width();
@@ -28,6 +28,14 @@ var arrumarACasa = function(){
 		'top': ((winH/2) - ($(".txt").height()/2))+'px'
 	});
 
+
+	$(".centered").css({
+		'left': ((winW/2) - ($(".centered").width()/2))+'px'
+	});
+	$(".centered").css({
+		'top': ((winH/2) - ($(".centered").height()/2))+'px'
+	});
+
 }
 
 arrumarACasa();
@@ -38,9 +46,6 @@ $(window).resize(function() {
 
 	
 });
-
-
-
 
 var cursorAnim = function(){
 
@@ -128,14 +133,6 @@ var bolada = function(color){
 
 }
 
-
-
-
-
-
-// bolada();
-
-
 var qualCor = function(){
 
 	if (!(bricks.length > 0)) {
@@ -143,3 +140,240 @@ var qualCor = function(){
 	}
 }
 
+
+
+
+
+// Cloud -------------------------------
+
+function Cloud(){
+
+	this.animateTime = Math.floor((Math.random() * 7000) + 1);
+
+	this.cloud = $("<div></div>").addClass("cloud");
+
+	this.esquerda;
+
+	this.steps;
+	this.stepsAUX;
+	this.subindo = false;
+	
+}
+
+var whereShouldCloudGo = function(x){
+
+
+	if (x.subindo) {
+
+		// console.log("negativos")
+
+		if (x.steps < x.stepsAUX) {
+			x.steps++;
+			return -1;
+		
+		}else{
+
+			x.subindo = false;
+			return -1;
+		}
+
+	}else{
+
+		// console.log("positivos")
+
+
+		if (x.steps > 0) {
+			x.steps--;
+			// console.log(x.steps)
+
+			return 1;
+		
+		}else{
+
+			// console.log("oooopa")
+
+
+			x.subindo = true;
+			x.steps = 0;
+			return 1;
+		}
+
+	}
+
+}
+
+var clouds = [];
+
+var moveCloudOne = function(){
+
+	for (var i = 0; i < clouds.length; i++) {
+		
+		if (clouds[i].esquerda) {
+
+			clouds[i].cloud.animate({
+				left: "+=150"
+			}, 7000);
+
+
+		}else{
+
+			clouds[i].cloud.animate({
+				right: "+=150"
+			}, 7000);
+
+		}
+		
+	};	
+
+
+	moveCloudTwo();
+
+	// $("#cloud2").animate({
+	// 	left: "+=150"
+	// }, 7000);
+
+	// $("#cloud3").animate({
+	// 	right: "+=150"
+	// }, 7000, function(){
+	// 	moveCloudTwo();
+	// });
+
+	
+}
+
+var moveCloudTwo = function(){
+
+	
+	for (var i = 0; i < clouds.length; i++) {
+		
+		if (clouds[i].esquerda) {
+
+			clouds[i].cloud.animate({
+				left: "-=150"
+			}, 7000);
+
+
+		}else{
+
+			clouds[i].cloud.animate({
+				right: "-=150"
+			}, 7000);
+
+		}
+		
+	};	
+
+
+	moveCloudOne();
+
+
+	// $("#cloud2").animate({
+	// 	left: "-=150"
+	// }, 7000);
+
+	// $("#cloud3").animate({
+	// 	right: "-=150"
+	// }, 7000, function(){
+	// 	moveCloudOne();
+	// });
+
+	
+}
+
+
+var moveCloud = function(){
+
+	
+	for (var i = 0; i < clouds.length; i++) {
+
+		var xDoMove = whereShouldCloudGo(clouds[i]);
+
+		if (xDoMove < 0) {
+			// console.log(xDoMove);
+
+		};
+		
+		if (clouds[i].esquerda) {
+
+			clouds[i].cloud.css({
+				left: "+="+xDoMove
+			});
+
+
+		}else{
+
+			clouds[i].cloud.css({
+				right: "+="+xDoMove
+			});
+
+		}
+		
+	};
+	
+	
+}
+
+
+function putCloudInPlace() {
+
+	for (var i = 0; i < clouds.length; i++) {
+
+		var dOUe = Math.floor((Math.random() * 100) + 1);
+
+		// console.log(dOUe);
+		// console.log(dOUe%2);
+		
+		
+		if (dOUe%2 == 0) {
+
+			clouds[i].cloud.css({
+				left: Math.floor((Math.random() * 500) + 61)+"px",
+				top: Math.floor((Math.random() * 150) + 50)+"px"
+			});	
+
+			clouds[i].esquerda = true;
+
+		}else{
+
+			clouds[i].cloud.css({
+				right: Math.floor((Math.random() * 500) + 61)+"px",
+				top: Math.floor((Math.random() * 150) + 50)+"px"
+			});
+
+			clouds[i].esquerda = false;
+
+		}
+
+		
+		$("#contSky").append(clouds[i].cloud);
+
+		
+	};
+
+
+	
+
+	setInterval(function(){
+
+		// console.log("sad")
+		moveCloud();
+
+	}, 50);
+
+}
+
+function instantClouds(n){
+
+	for (var i = 0; i < n; i++) {
+		clouds[i] = new Cloud();
+
+		clouds[i].steps = Math.floor((Math.random() * 150) + 150);
+		clouds[i].stepsAUX = clouds[i].steps;
+	};
+
+	putCloudInPlace();
+
+}
+
+
+instantClouds(10);

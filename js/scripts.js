@@ -351,3 +351,8 @@ var instantMountains = function(){
 
 instantMountains();
 
+
+$(".sun").css({
+	left: Math.floor((Math.random() * ($(window).width() - $(".sun").width())) + 1) +"px",
+	top: Math.floor((Math.random() * 50) + 1) +"px"
+});

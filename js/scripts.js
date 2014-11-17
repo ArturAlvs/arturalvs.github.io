@@ -204,83 +204,6 @@ var whereShouldCloudGo = function(x){
 
 var clouds = [];
 
-var moveCloudOne = function(){
-
-	for (var i = 0; i < clouds.length; i++) {
-		
-		if (clouds[i].esquerda) {
-
-			clouds[i].cloud.animate({
-				left: "+=150"
-			}, 7000);
-
-
-		}else{
-
-			clouds[i].cloud.animate({
-				right: "+=150"
-			}, 7000);
-
-		}
-		
-	};	
-
-
-	moveCloudTwo();
-
-	// $("#cloud2").animate({
-	// 	left: "+=150"
-	// }, 7000);
-
-	// $("#cloud3").animate({
-	// 	right: "+=150"
-	// }, 7000, function(){
-	// 	moveCloudTwo();
-	// });
-
-	
-}
-
-var moveCloudTwo = function(){
-
-	
-	for (var i = 0; i < clouds.length; i++) {
-		
-		if (clouds[i].esquerda) {
-
-			clouds[i].cloud.animate({
-				left: "-=150"
-			}, 7000);
-
-
-		}else{
-
-			clouds[i].cloud.animate({
-				right: "-=150"
-			}, 7000);
-
-		}
-		
-	};	
-
-
-	moveCloudOne();
-
-
-	// $("#cloud2").animate({
-	// 	left: "-=150"
-	// }, 7000);
-
-	// $("#cloud3").animate({
-	// 	right: "-=150"
-	// }, 7000, function(){
-	// 	moveCloudOne();
-	// });
-
-	
-}
-
-
 var moveCloud = function(){
 
 	
@@ -377,3 +300,54 @@ function instantClouds(n){
 
 
 instantClouds(10);
+
+
+// Ground
+
+var ground = $("<div></div>").addClass("ground");
+
+ground.css({
+		width : $(window).width()+"px"
+	});
+
+$("#groundPlace").append(ground);
+
+
+// Mountains
+
+function Mountain() {
+	
+	this.mountainTop = $("<div></div>").addClass("mountain-top")
+
+	this.mountain = $("<div></div>").addClass("mountain").append(this.mountainTop); //Só colocando o top na montanha
+	// this.mountain = $("<div></div>").addClass("mountain").append($("<div></div>").addClass("mountain-top")); //Só colocando o top na montanha
+
+
+}
+var mountains = [];
+
+var instantMountains = function(){
+
+	var tamMount = 350;
+	var qntPossible = 10;
+	var qntMountain = Math.floor((Math.random() * qntPossible) + 1);
+
+	for (var i = 0; i < qntMountain; i++) {
+
+		mountains[i] = new Mountain();
+
+		var mountainLeft = Math.floor((Math.random() * ($(window).width() - tamMount)) + 1);
+
+		mountains[i].mountain.css({
+			left: mountainLeft+"px"
+		});
+
+		$("#mountainPlace").append(mountains[i].mountain);
+
+	};
+	
+
+}
+
+instantMountains();
+

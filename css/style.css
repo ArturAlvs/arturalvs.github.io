@@ -1,4 +1,7 @@
-
+body
+{
+  display:none;
+}
 .centered{
 
 	color: #5CA8DA;

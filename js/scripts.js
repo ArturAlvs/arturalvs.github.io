@@ -62,7 +62,7 @@ $(document).ready(function(){
 
 	setInterval('cursorAnim()', 616);
 	
-	$("#paredao").hide();
+	$('body').show();
 
 });
 

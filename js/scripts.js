@@ -62,7 +62,7 @@ $(document).ready(function(){
 
 	setInterval('cursorAnim()', 616);
 	
-	$('body').css('display', 'inline-block');
+	$('body').css('display', 'inline');
 
 });
 

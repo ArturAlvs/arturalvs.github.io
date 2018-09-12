@@ -1,4 +1,47 @@
 
+html,body {
+    margin:0;
+    padding:0;
+	min-height:100%; /* needed for container min-height */
+	width: 100%;
+
+    font-family:arial,sans-serif;
+    font-size:medium;
+	color:#666;
+
+	background-color: antiquewhite;	
+	padding: 5px;
+}
+
+.viewport {
+    min-height: 100%;
+}
+
+.thick {
+    height: 90%;
+    color: white;
+    background-color: #800;
+}
+
+.thin {
+    height: 10%;
+    color: white;
+    background-color: #080;
+}
+
+#centro{
+	background-color: #0e83cd;
+	
+}
+
+#lateralEsq{
+	background-color: #DB7C3C;
+}
+
+#lateralDir{
+	background-color: #DB7C3C;
+}
+
 .centered{
 
 	color: #5CA8DA;

@@ -7,50 +7,12 @@ html,body {
 
     font-family:arial,sans-serif;
     font-size:medium;
-	color:#666;
+	color:#B9F807;
 
-	background-color: antiquewhite;	
+	background-color: #282828;	
 	padding: 5px;
 }
 
-.viewport {
-    min-height: 100%;
-}
-
-.thick {
-    height: 90%;
-    color: white;
-    background-color: #800;
-}
-
-.thin {
-    height: 10%;
-    color: white;
-    background-color: #080;
-}
-
-#centro{
-	background-color: #0e83cd;
-	
-}
-
-#lateralEsq{
-	background-color: #DB7C3C;
-}
-
-#lateralDir{
-	background-color: #DB7C3C;
-}
-
-.centered{
-
-	color: #5CA8DA;
-
-	position: absolute;
-	font-size: 2.618em;
-	line-height: 1.618em;
-
-}
 
 .firstCont {
 	background-color: rgb(255, 255, 255);
